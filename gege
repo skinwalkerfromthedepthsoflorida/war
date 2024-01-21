@@ -1,0 +1,344 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MMSGUI = Instance.new("ImageLabel")
+local Logo = Instance.new("ImageLabel")
+local Header = Instance.new("TextLabel")
+local SpeedButton = Instance.new("TextButton")
+local SpeedValue = Instance.new("TextBox")
+local JumpButton = Instance.new("TextButton")
+local JumpValue = Instance.new("TextBox")
+local InfJump = Instance.new("TextButton")
+local ClickTP = Instance.new("TextButton")
+local AutoReady = Instance.new("TextButton")
+local Autofarm = Instance.new("TextButton")
+local DistanceValue = Instance.new("TextBox")
+local Void = Instance.new("TextLabel")
+local Boop = Instance.new("TextLabel")
+local Credits = Instance.new("TextLabel")
+local Line2 = Instance.new("ImageLabel")
+local Line1 = Instance.new("ImageLabel")
+local Close = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ResetOnSpawn = false
+
+MMSGUI.Name = "MMSGUI"
+MMSGUI.Parent = ScreenGui
+MMSGUI.Active = true
+MMSGUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MMSGUI.BackgroundTransparency = 1.000
+MMSGUI.BorderSizePixel = 0
+MMSGUI.Position = UDim2.new(0.603843749, 0, 0.242014736, 0)
+MMSGUI.Selectable = true
+MMSGUI.Draggable = true
+MMSGUI.Size = UDim2.new(0, 445, 0, 386)
+MMSGUI.Visible = false
+MMSGUI.Image = "rbxassetid://3570695787"
+MMSGUI.ImageColor3 = Color3.fromRGB(125, 179, 197)
+MMSGUI.ScaleType = Enum.ScaleType.Slice
+MMSGUI.SliceCenter = Rect.new(100, 100, 100, 100)
+MMSGUI.SliceScale = 0.120
+
+Logo.Name = "Logo"
+Logo.Parent = MMSGUI
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1.000
+Logo.Position = UDim2.new(-0.0969709232, 0, -0.13446492, 0)
+Logo.Size = UDim2.new(0, 100, 0, 100)
+Logo.Image = "http://www.roblox.com/asset/?id=5381742325"
+
+Header.Name = "Header"
+Header.Parent = MMSGUI
+Header.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Header.BackgroundTransparency = 1.000
+Header.BorderSizePixel = 0
+Header.Position = UDim2.new(0.170786515, 0, 0, 0)
+Header.Size = UDim2.new(0, 293, 0, 41)
+Header.Font = Enum.Font.Highway
+Header.Text = "MMS GUI"
+Header.TextColor3 = Color3.fromRGB(55, 82, 103)
+Header.TextSize = 32.000
+
+SpeedButton.Name = "SpeedButton"
+SpeedButton.Parent = MMSGUI
+SpeedButton.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+SpeedButton.BorderSizePixel = 0
+SpeedButton.Position = UDim2.new(0.0446370393, 0, 0.123232901, 0)
+SpeedButton.Size = UDim2.new(0, 200, 0, 50)
+SpeedButton.Font = Enum.Font.Highway
+SpeedButton.Text = "WalkSpeed"
+SpeedButton.TextColor3 = Color3.fromRGB(55, 82, 103)
+SpeedButton.TextSize = 18.000
+SpeedButton.MouseButton1Click:connect(function()
+	while true do
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (SpeedValue.Text)
+		wait(0.1)
+	end
+end)
+
+SpeedValue.Name = "SpeedValue"
+SpeedValue.Parent = MMSGUI
+SpeedValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedValue.BackgroundTransparency = 1.000
+SpeedValue.BorderSizePixel = 0
+SpeedValue.Position = UDim2.new(0.0446370393, 0, 0.251647145, 0)
+SpeedValue.Size = UDim2.new(0, 200, 0, 23)
+SpeedValue.Font = Enum.Font.Highway
+SpeedValue.Text = "--SPEED AMOUNT--"
+SpeedValue.TextColor3 = Color3.fromRGB(55, 82, 103)
+SpeedValue.TextSize = 15.000
+SpeedValue.TextWrapped = true
+
+JumpButton.Name = "JumpButton"
+JumpButton.Parent = MMSGUI
+JumpButton.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+JumpButton.BorderSizePixel = 0
+JumpButton.Position = UDim2.new(0.0446370244, 0, 0.332277834, 0)
+JumpButton.Size = UDim2.new(0, 200, 0, 50)
+JumpButton.Font = Enum.Font.Highway
+JumpButton.Text = "JumpPower"
+JumpButton.TextColor3 = Color3.fromRGB(55, 82, 103)
+JumpButton.TextSize = 18.000
+JumpButton.MouseButton1Click:connect(function()
+	while true do
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = (JumpValue.Text)
+		wait(0.1)
+	end
+end)
+
+JumpValue.Name = "JumpValue"
+JumpValue.Parent = MMSGUI
+JumpValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JumpValue.BackgroundTransparency = 1.000
+JumpValue.BorderSizePixel = 0
+JumpValue.Position = UDim2.new(0.0446370244, 0, 0.460692108, 0)
+JumpValue.Size = UDim2.new(0, 200, 0, 23)
+JumpValue.Font = Enum.Font.Highway
+JumpValue.Text = "--JUMP AMOUNT--"
+JumpValue.TextColor3 = Color3.fromRGB(55, 82, 103)
+JumpValue.TextSize = 15.000
+JumpValue.TextWrapped = true
+
+InfJump.Name = "InfJump"
+InfJump.Parent = MMSGUI
+InfJump.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+InfJump.BorderSizePixel = 0
+InfJump.Position = UDim2.new(0.512052774, 0, 0.123232931, 0)
+InfJump.Size = UDim2.new(0, 200, 0, 50)
+InfJump.Font = Enum.Font.Highway
+InfJump.Text = "Infinite Jump"
+InfJump.TextColor3 = Color3.fromRGB(55, 82, 103)
+InfJump.TextSize = 18.000
+InfJump.MouseButton1Click:connect(function()
+	_G.infinjump = true
+
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if _G.infinjump then
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end
+end)
+end)
+
+ClickTP.Name = "ClickTP"
+ClickTP.Parent = MMSGUI
+ClickTP.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+ClickTP.BorderSizePixel = 0
+ClickTP.Position = UDim2.new(0.512052774, 0, 0.330486834, 0)
+ClickTP.Size = UDim2.new(0, 200, 0, 50)
+ClickTP.Font = Enum.Font.Highway
+ClickTP.Text = "Click TP"
+ClickTP.TextColor3 = Color3.fromRGB(55, 82, 103)
+ClickTP.TextSize = 18.000
+ClickTP.MouseButton1Click:connect(function()
+	local Imput = game:GetService("UserInputService")
+local Plr = game.Players.LocalPlayer
+local Mouse = Plr:GetMouse()
+
+function To(position)
+    local Chr = Plr.Character
+    if Chr ~= nil then
+        Chr:MoveTo(position)
+    end
+end
+
+Imput.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and Imput:IsKeyDown(Enum.KeyCode.LeftControl) then
+        To(Mouse.Hit.p)
+    end
+end)
+end)
+	
+AutoReady.Name = "AutoReady"
+AutoReady.Parent = MMSGUI
+AutoReady.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+AutoReady.BorderSizePixel = 0
+AutoReady.Position = UDim2.new(0.512052774, 0, 0.545512736, 0)
+AutoReady.Size = UDim2.new(0, 200, 0, 50)
+AutoReady.Font = Enum.Font.Highway
+AutoReady.Text = "Auto Ready"
+AutoReady.TextColor3 = Color3.fromRGB(55, 82, 103)
+AutoReady.TextSize = 18.000
+AutoReady.MouseButton1Click:connect(function()
+	while true do
+    if game.Players.LocalPlayer.PlayerSettings.isReady.Value == false then
+        game.Workspace.GameFunctions.isReady:InvokeServer()
+    end
+    wait(1)
+	end
+end)
+	
+Autofarm.Name = "Autofarm"
+Autofarm.Parent = MMSGUI
+Autofarm.BackgroundColor3 = Color3.fromRGB(100, 158, 177)
+Autofarm.BorderSizePixel = 0
+Autofarm.Position = UDim2.new(0.0446370393, 0, 0.548103333, 0)
+Autofarm.Size = UDim2.new(0, 200, 0, 50)
+Autofarm.Font = Enum.Font.Highway
+Autofarm.Text = "Autofarm"
+Autofarm.TextColor3 = Color3.fromRGB(55, 82, 103)
+Autofarm.TextSize = 18.000
+Autofarm.MouseButton1Click:connect(function()
+	_G.Settings = {
+Distance = (DistanceValue.Text);
+}
+
+loadstring(game:HttpGet("https://pastebin.com/raw/XbBJbBTV", true))()
+end)
+
+DistanceValue.Name = "DistanceValue"
+DistanceValue.Parent = MMSGUI
+DistanceValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DistanceValue.BackgroundTransparency = 1.000
+DistanceValue.BorderSizePixel = 0
+DistanceValue.Position = UDim2.new(0.0446370244, 0, 0.675718009, 0)
+DistanceValue.Size = UDim2.new(0, 200, 0, 23)
+DistanceValue.Font = Enum.Font.Highway
+DistanceValue.Text = "--DISTANCE AWAY--"
+DistanceValue.TextColor3 = Color3.fromRGB(55, 82, 103)
+DistanceValue.TextSize = 15.000
+DistanceValue.TextWrapped = true
+
+Void.Name = "Void"
+Void.Parent = MMSGUI
+Void.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Void.BackgroundTransparency = 1.000
+Void.BorderSizePixel = 0
+Void.Position = UDim2.new(0.170479834, 0, 0.794888973, 0)
+Void.Size = UDim2.new(0, 298, 0, 23)
+Void.Font = Enum.Font.Highway
+Void.Text = "Void - Scripter & UI"
+Void.TextColor3 = Color3.fromRGB(216, 187, 127)
+Void.TextSize = 18.000
+Void.TextWrapped = true
+
+Boop.Name = "Boop"
+Boop.Parent = MMSGUI
+Boop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Boop.BackgroundTransparency = 1.000
+Boop.BorderSizePixel = 0
+Boop.Position = UDim2.new(0.170479834, 0, 0.857065141, 0)
+Boop.Size = UDim2.new(0, 298, 0, 23)
+Boop.Font = Enum.Font.Highway
+Boop.Text = "Boop - Moral Support"
+Boop.TextColor3 = Color3.fromRGB(216, 187, 127)
+Boop.TextSize = 18.000
+Boop.TextWrapped = true
+
+Credits.Name = "Credits"
+Credits.Parent = MMSGUI
+Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits.BackgroundTransparency = 1.000
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.170479834, 0, 0.735303462, 0)
+Credits.Size = UDim2.new(0, 298, 0, 23)
+Credits.Font = Enum.Font.Highway
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.fromRGB(216, 187, 127)
+Credits.TextSize = 25.000
+Credits.TextWrapped = true
+
+Line2.Name = "Line2"
+Line2.Parent = MMSGUI
+Line2.BackgroundColor3 = Color3.fromRGB(216, 187, 127)
+Line2.BorderSizePixel = 0
+Line2.Position = UDim2.new(0.12584269, 0, 0.0466321185, 0)
+Line2.Size = UDim2.new(0, 100, 0, 4)
+
+Line1.Name = "Line1"
+Line1.Parent = MMSGUI
+Line1.BackgroundColor3 = Color3.fromRGB(216, 187, 127)
+Line1.BorderSizePixel = 0
+Line1.Position = UDim2.new(0.649438202, 0, 0.0466321185, 0)
+Line1.Size = UDim2.new(0, 100, 0, 4)
+
+Close.Name = "Close"
+Close.Parent = MMSGUI
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.92674005, 0, 0.0241956115, 0)
+Close.Size = UDim2.new(0, 32, 0, 21)
+Close.Font = Enum.Font.Highway
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(55, 82, 103)
+Close.TextSize = 28.000
+Close.MouseButton1Click:connect(function()
+	Open.Visible = true
+end)
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(125, 179, 197)
+Open.BorderColor3 = Color3.fromRGB(216, 187, 127)
+Open.BorderSizePixel = 2
+Open.Position = UDim2.new(0.423950225, 0, -0.0298584662, 0)
+Open.Size = UDim2.new(0, 245, 0, 35)
+Open.Font = Enum.Font.Highway
+Open.Text = "MMS GUI"
+Open.TextColor3 = Color3.fromRGB(55, 82, 103)
+Open.TextSize = 24.000
+Open.MouseButton1Click:connect(function()
+	Open.Visible = false
+end)
+
+-- Scripts:
+
+local function QHWMZMJ_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(QHWMZMJ_fake_script)()
+local function HWTVZW_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	local frame = script.Parent.Parent.MMSGUI
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		else
+			frame.Visible = false
+		end
+	end)
+end
+coroutine.wrap(HWTVZW_fake_script)()
